@@ -318,6 +318,7 @@ async function chart(question) {
     } else {
       wasCorrect = false;
     }
+    d3.selectAll(".ending-button").style("animation-name", "none");
     timer = d3.timer(updateMarkers);
   });
 
