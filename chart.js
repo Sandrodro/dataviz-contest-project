@@ -278,7 +278,7 @@ async function chart(question) {
     .attr("x", 80)
     .attr("y", 75)
     .attr("fill", "lightblue")
-    .style("opacity", 0.5)
+    .style("opacity", 0.25)
     .style("z-index", 1)
     .style("transition", "all 0.8s");
 
