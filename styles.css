@@ -64,7 +64,7 @@ body {
   background-color: white;
   opacity: 0;
   border-radius: 10px;
-  transition: all 0.8s;
+  transition: all 1s;
   font-size: 24px;
   text-align: center;
   line-height: 1.5;
@@ -93,4 +93,8 @@ body {
   animation-name: jitter;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+}
+
+#question span {
+  color: #0a9396;
 }
