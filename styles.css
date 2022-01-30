@@ -13,6 +13,10 @@ body {
   font-family: "FiraGo Regular";
 }
 
+#wrapper {
+  width: 90%;
+}
+
 .category-path {
   fill: none;
   stroke: white;
