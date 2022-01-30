@@ -249,7 +249,9 @@ async function chart(question) {
     .attr("class", "ending-number")
     .text(0)
     .attr("x", 50)
-    .attr("y", (d, i) => endYScale(i) + 9);
+    .attr("y", (d, i) => endYScale(i) + 9)
+    .style("fill", "#0a9396")
+    .style("font-size", 18);
 
   const endingBars = endingBarGroup
     .selectAll("ending-bar")
