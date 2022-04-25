@@ -116,3 +116,7 @@ body {
 #question span {
   color: #48c78e;
 }
+
+.fb-share-button {
+  opacity: 0;
+}

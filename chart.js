@@ -40,14 +40,11 @@ const questions = [
   },
 ];
 
-const winText =
-  "ყოჩაღ, შენ მეტი გცოდნია, ვიდრე ამ ქვიზის შემქმნელებს <a href='https://askgov.ge/' target=_blank>Askgov.ge</a>-ს საიტის დათვალიერებამდე! ეწვიე პლატფორმას და გაიგე მეტი საინტერესო საჯარო ინფორმაცია ამ და სხვა თემებზე.";
+const winText = `ყოჩაღ, შენ მეტი გცოდნია, ვიდრე ამ ქვიზის შემქმნელებს <a href='https://askgov.ge/' target=_blank>Askgov.ge</a>-ს საიტის დათვალიერებამდე! ეწვიე პლატფორმას და გაიგე მეტი საინტერესო საჯარო ინფორმაცია ამ და სხვა თემებზე.`;
 
-const loseText =
-  "გაგაკვირვა პასუხებმა? ეწვიე <a href='https://askgov.ge/' target=_blank>Askgov.ge</a>-ს და გაიგე მეტი საინტერესო საჯარო ინფორმაცია ამ და სხვა თემებზე.";
+const loseText = `გაგაკვირვა პასუხებმა? ეწვიე <a href='https://askgov.ge/' target=_blank>Askgov.ge</a>-ს და გაიგე მეტი საინტერესო საჯარო ინფორმაცია ამ და სხვა თემებზე.`;
 
-const initialText =
-  "რა იცი საქართველოში პოლიტიკური პარტიების დაფინანსების შესახებ?<br>რამდენად ემთხვევა შენი ვარაუდები რეალობას?<br>გამოცადე თავი ჩვენს მოკლე ქვიზში და გაიგე მეტი ამ საკითხზე. <br><br> <em>პასუხის ასარჩევად დააკლიკეთ შესაბამის წრეზე</em>";
+const initialText = `რა იცი საქართველოში პოლიტიკური პარტიების დაფინანსების შესახებ?<br>რამდენად ემთხვევა შენი ვარაუდები რეალობას?<br>გამოცადე თავი ჩვენს მოკლე ქვიზში და გაიგე მეტი ამ საკითხზე. <br><br> <em>პასუხის ასარჩევად დააკლიკეთ შესაბამის წრეზე</em>`;
 
 let currentQuestion = 0;
 let correctAnswers = 0;
@@ -368,7 +365,7 @@ async function chart(question) {
       money = [...money, generateMoney(elapsed)];
     }
 
-    const xProgressAccessor = (d) => (elapsed - d.startTime) / 1600;
+    const xProgressAccessor = (d) => (elapsed - d.startTime) / 1100;
 
     const visibleMoneyMarkers = markersGroup.selectAll(".marker-rect").data(
       money.filter((d) => {
