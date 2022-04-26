@@ -356,15 +356,20 @@ async function chart(question) {
 
   let timer;
 
+  let wasClicked = false;
+
   endingButtons.on("click", (item) => {
-    endingRect.style("opacity", 0);
-    if (parseInt(item.target.id) === biggest[1]) {
-      wasCorrect = true;
-    } else {
-      wasCorrect = false;
+    if (!wasClicked) {
+      endingRect.style("opacity", 0);
+      if (parseInt(item.target.id) === biggest[1]) {
+        wasCorrect = true;
+      } else {
+        wasCorrect = false;
+      }
+      d3.selectAll(".ending-button").style("animation-name", "none");
+      wasClicked = true;
+      timer = d3.timer(updateMarkers);
     }
-    d3.selectAll(".ending-button").style("animation-name", "none");
-    timer = d3.timer(updateMarkers);
   });
 
   let biggestIndex = biggest[1];
@@ -441,6 +446,7 @@ async function chart(question) {
     }
 
     if (isFinished) {
+      wasClicked = false;
       timer.stop();
       let popupText = d3.select(".popupText");
       if (wasCorrect) {
