@@ -66,6 +66,7 @@ body {
 
 .popup {
   width: 850px;
+  min-height: 300px;
   height: max-content;
   border: 2px solid #00d1b2;
   position: absolute;
@@ -117,6 +118,6 @@ body {
   color: #48c78e;
 }
 
-.fb-share-button {
-  opacity: 0;
+.shareBtn {
+  opacity: 100;
 }

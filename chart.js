@@ -49,6 +49,15 @@ const initialText = `რა იცი საქართველოში პ�
 let currentQuestion = 0;
 let correctAnswers = 0;
 
+d3.select("#nextButton")
+  .style("position", "absolute")
+  .style("bottom", "30px")
+  .style("left", "390px");
+
+// window.setTimeout(() => {
+//   d3.select(".shareBtn").style("position", "absolute").style("left", "3000px");
+// }, 500);
+
 async function chart(question) {
   d3.select("#question").html(question.text[0]);
 
@@ -450,9 +459,17 @@ async function chart(question) {
     if (currentQuestion == questions.length - 1) {
       if (correctAnswers >= 2) {
         d3.select(".popupText").html(winText);
+        d3.select(".shareBtn")
+          .style("position", "relative")
+          .style("left", 0)
+          .style("opacity", "100%");
         d3.select(".popup").style("border", "2px solid green");
       } else {
         d3.select(".popupText").html(loseText);
+        d3.select(".shareBtn")
+          .style("position", "relative")
+          .style("left", 0)
+          .style("opacity", "100%");
         d3.select(".popup").style("border", "2px solid red");
       }
 
@@ -461,6 +478,10 @@ async function chart(question) {
         .text("ხელახლა ცდა")
         .on("click", () => {
           d3.select("svg").remove();
+          d3.select(".shareBtn")
+            .style("position", "absolute")
+            .style("left", "3000px")
+            .style("opacity", 0);
           d3.select(".popup").style("opacity", 0);
           chart(questions[currentQuestion]);
         });
@@ -483,7 +504,10 @@ function start() {
     .on("click", () => {
       d3.select(".popup").style("opacity", 0);
       chart(questions[currentQuestion]);
-      d3.select("#nextButton").text("შემდეგი");
+      d3.select("#nextButton")
+        .text("შემდეგი")
+        .style("position", "relative")
+        .style("left", "unset");
     });
 }
 
