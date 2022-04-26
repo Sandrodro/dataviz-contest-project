@@ -54,9 +54,9 @@ d3.select("#nextButton")
   .style("bottom", "30px")
   .style("left", "390px");
 
-// window.setTimeout(() => {
-//   d3.select(".shareBtn").style("position", "absolute").style("left", "3000px");
-// }, 500);
+window.setTimeout(() => {
+  d3.select(".shareBtn").style("position", "absolute").style("left", "3000px");
+}, 500);
 
 async function chart(question) {
   d3.select("#question").html(question.text[0]);
