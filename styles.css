@@ -62,6 +62,7 @@ body {
 #question {
   margin: 20px auto;
   text-align: start;
+  line-height: 40px;
 }
 
 .popup {
